@@ -8,8 +8,6 @@ const StyleLintPlugin = require("stylelint-webpack-plugin")
  * Agency Webpack Mix Config
  *
  * ⚙️ Settings
- * 🎨 Styles
- *  - PostCss
  * 📑 Scripts
  *  - Vendor
  *  - Polyfills
@@ -45,7 +43,6 @@ const source = {
     icons: path.resolve("src/icons"),
     images: path.resolve("src/images"),
     scripts: path.resolve("src/scripts"),
-    styles: path.resolve("src/styles"),
     static: path.resolve("src/static"),
 }
 
@@ -57,31 +54,6 @@ mix.disableSuccessNotifications()
 
 // ⚙️ Source maps
 if (mix.inProduction()) mix.sourceMaps()
-
-/**
- * 🎨 Styles: Main
- * Uses dart-sass which has a replica API to Node-Sass
- * https://laravel.com/docs/5.8/mix#sass
- * https://github.com/sass/node-sass#options
- */
-const styleFiles = getFilesIn(path.resolve(__dirname, source.styles), [
-    "scss",
-    "sass",
-])
-styleFiles.forEach(styleFile => {
-    mix.sass(styleFile, path.join(publicFolder, publicBuildFolder), {
-        // Send data to the stylesheet
-        data: `$isDev: ${!mix.inProduction()};`,
-    })
-})
-
-/**
- * 🎨 Styles: PostCss + other options
- */
-mix.options({
-    postCss: [],
-    processCssUrls: false, // Off as this process is expensive
-})
 
 /**
  * 📑 Scripts: Main
@@ -192,8 +164,6 @@ mix.webpackConfig({
             verbose: true,
             cleanOnceBeforeBuildPatterns: cleanBeforeBuildGlobs,
         }),
-        // Lint styles
-        new StyleLintPlugin(),
     ],
 })
 
