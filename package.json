@@ -11,7 +11,7 @@
     },
     "dependencies": {
         "core-js": "^3.1.4",
-        "deepmerge": "^3.2.0",
+        "deepmerge": "^3.2.1",
         "formalism": "^0.1.27",
         "lodash": "^4.17.11",
         "vue": "^2.6.10",
@@ -26,7 +26,7 @@
         "eslint-plugin-compat": "^3.1.2",
         "imagemin-webpack-plugin": "^2.4.2",
         "laravel-mix": "^4.0.16",
-        "laravel-mix-imagemin": "^1.0.0",
+        "laravel-mix-imagemin": "1.0.0",
         "laravel-mix-polyfill": "^1.0.2",
         "laravel-mix-svg-sprite": "^1.0.0",
         "sass": "^1.21.0",
@@ -38,7 +38,7 @@
         "@vue/cli-plugin-babel": "^3.8.0",
         "@vue/cli-plugin-eslint": "^3.8.0",
         "@vue/cli-service": "^3.8.4",
-        "eslint-plugin-vue": "^5.0.0"
+        "eslint-plugin-vue": "^5.2.2"
     },
     "browserslist": [
         "> 1%",

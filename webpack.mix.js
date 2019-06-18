@@ -275,19 +275,19 @@ if (mix.inProduction()) {
  * Removal of the deprecated loader with no hmr support
  * https://github.com/webpack-contrib/extract-text-webpack-plugin
  */
-if (!mix.inProduction()) {
-    Mix.listen("configReady", config => {
-        for (rule of config.module.rules) {
-            if (styleFiles.includes(String(rule.test))) {
-                rule.use = rule.use.filter(
-                    i =>
-                        !i.loader ||
-                        !i.loader.includes(`extract-text-webpack-plugin`)
-                )
-            }
-        }
-    })
-}
+// if (!mix.inProduction()) {
+//     Mix.listen("configReady", config => {
+//         for (rule of config.module.rules) {
+//             if (styleFiles.includes(String(rule.test))) {
+//                 rule.use = rule.use.filter(
+//                     i =>
+//                         !i.loader ||
+//                         !i.loader.includes(`extract-text-webpack-plugin`)
+//                 )
+//             }
+//         }
+//     })
+// }
 
 /**
  * Get files helper
