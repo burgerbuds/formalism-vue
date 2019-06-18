@@ -53,51 +53,47 @@
       accept="pdf, ai, psd"
     />
 
-    <div>
-      <Fieldset
-        name="Fieldset"
-        label="Fieldset group"
-        instructions="This is a test"
-        minColumnWidth="200px"
-        oneLine
-      >
-        <Checkbox
-          name="checkbox1"
-          label="First name"
-        />
-        <Checkbox
-          name="checkbox2"
-          label="First name last name"
-        />
-        <Checkbox
-          name="checkbox3"
-          label="First name"
-        />
-      </Fieldset>
-    </div>
+    <Fieldset
+      name="Fieldset"
+      label="Fieldset group"
+      instructions="This is a test"
+      minColumnWidth="200px"
+      oneLine
+    >
+      <Checkbox
+        name="checkbox1"
+        label="First name"
+      />
+      <Checkbox
+        name="checkbox2"
+        label="First name last name"
+      />
+      <Checkbox
+        name="checkbox3"
+        label="First name"
+      />
+    </Fieldset>
 
-    <div>
-      <Fieldset
-        name="Fieldset"
-        label="Fieldset group"
-        instructions="This is a test"
-        minColumnWidth="200px"
-        oneLine
-      >
-        <Radio
-          name="radio2"
-          label="Last name"
-        />
-        <Radio
-          name="radio2"
-          label="Last name"
-        />
-        <Radio
-          name="radio2"
-          label="Last name"
-        />
-      </Fieldset>
-    </div>
+    <Fieldset
+      name="Fieldset"
+      label="Fieldset group"
+      instructions="This is a test"
+      minColumnWidth="200px"
+      oneLine
+    >
+      <Radio
+        name="radio2"
+        label="Last name"
+      />
+      <Radio
+        name="radio2"
+        label="Last name"
+      />
+      <Radio
+        name="radio2"
+        label="Last name"
+      />
+    </Fieldset>
 
   </form>
 </template>
