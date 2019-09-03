@@ -1,0 +1,37 @@
+{
+  "name": "formalism-vue",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build --target lib --name FormalismVue 'src/main.js'",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "dependencies": {
+    "core-js": "^2.6.5",
+    "formalism": "^0.1.27",
+    "vue": "^2.6.10"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@storybook/addon-actions": "^5.1.11",
+    "@storybook/addon-knobs": "^5.1.11",
+    "@storybook/addon-links": "^5.1.11",
+    "@storybook/addons": "^5.1.11",
+    "@storybook/vue": "^5.1.11",
+    "@vue/cli-plugin-babel": "^3.11.0",
+    "@vue/cli-service": "^3.11.0",
+    "babel-loader": "^8.0.6",
+    "babel-preset-vue": "^2.0.2",
+    "css-loader": "^3.2.0",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.0",
+    "vue-loader": "^15.7.1",
+    "vue-style-loader": "^4.1.2",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "browser": "./dist/FormalismVue.umd.min.js",
+  "module": "./dist/FormalismVue.common.js"
+}
