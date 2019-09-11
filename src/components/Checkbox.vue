@@ -1,7 +1,7 @@
 <template>
     <div class="f-checkbox f-checkbox--outlined" :class="containerClass">
         <label class="f-checkbox__inner">
-            <input class='f-checkbox__field' type="checkbox" @blur="handleBlur" v-model="internalValue" @input="handleInput" :name="name" :required="required"/>
+            <input class='f-checkbox__field' type="checkbox" @blur="handleBlur" v-model="internalValue" @input="handleInput" @change="handleInput" :name="name" :required="required"/>
             <span class="f-checkbox__label"><span class="f-checkbox__label-text">{{ label }}</span></span>
             <span class="f-checkbox__indicator f-checkbox__indicator--required" aria-hidden="true" v-if='required'>*</span>
         </label>
