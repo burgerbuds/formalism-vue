@@ -1,8 +1,8 @@
 <template>
     <div class="f-select f-select--outlined is-filled" :class="containerClass">
         <label class="f-select__inner">
-            <select class='f-select__field' :name="name" @blur="handleBlur" @input="handleInput" v-model="internalValue">
-                <option v-for="option in options" :value="option.value" :key="option.label">{{ option.label }}</option>
+            <select class='f-select__field' :name="name" v-model="internalValue" v-on="listeners">
+                <option v-for="option in options" :value="option.value" :key="option.label" :disabled="option.disabled || false">{{ option.label }}</option>
             </select>
             <span class="f-select__label"><span class="f-select__label-text">{{ label }}</span></span>
             <span class="f-select__indicator f-select__indicator--required" aria-hidden="true" v-if='required'>*</span>
@@ -29,6 +29,21 @@
 
       }
     },
+    model: {
+      prop: 'value',
+      event: 'change'
+    },
+    computed: {
+      listeners() {
+        const vm = this;
+        return {
+          ...this.$listeners,
+          change($event) {
+            vm.$emit('change', $event.target.value);
+          }
+        }
+      }
+    }
   }
 </script>
 

@@ -12,7 +12,7 @@ export const formElementShared = {
 			type: String,
 		},
 		value: {
-			type: [String, Number, Boolean]
+			type: [String, Number, Boolean, Object]
 		},
 		required: {
 			type: Boolean,

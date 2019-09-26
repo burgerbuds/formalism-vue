@@ -1,7 +1,7 @@
 <template>
     <div class="f-textarea f-textarea--outlined" :class="containerClass">
         <label class="f-textarea__inner">
-            <textarea class="f-textarea__field" @blur="handleBlur" v-model="internalValue" @input="handleInput" :name="name" :required="required"/>
+            <textarea class="f-textarea__field" v-model="internalValue" v-on="listeners" :name="name" :required="required"/>
             <span class="f-textarea__label"><span class="f-textarea__label-text">{{ label }}</span></span>
             <span class="f-textarea__indicator f-textarea__indicator--required" aria-hidden="true" v-if='required'>*</span>
         </label>
@@ -26,6 +26,21 @@
 
       }
     },
+    model: {
+      prop: 'value',
+      event: 'input'
+    },
+    computed: {
+      listeners() {
+        const vm = this;
+        return {
+          ...this.$listeners,
+          input($event) {
+            vm.$emit('input', $event.target.value);
+          }
+        }
+      }
+    }
   }
 </script>
 

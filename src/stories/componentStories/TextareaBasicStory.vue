@@ -1,15 +1,19 @@
 <template>
   <div style='height:100vh; display:flex; flex-flow:row nowrap; justify-content: center;align-items:center;'>
-    <Textarea
-      :name="name"
-      :label="label"
-      :value="value"
-      :required="required"
-      :errorMessage="errorMessage"
-      :instructionMessage="instructionMessage"
-      @blur="handleBlur"
-      @input="handlueInput"
-    ></Textarea>
+    <div>
+      <div>
+        <Textarea
+          :name="name"
+          :label="label"
+          :required="required"
+          :errorMessage="errorMessage"
+          :instructionMessage="instructionMessage"
+          v-model="modelValue"
+        ></Textarea>
+      </div>
+      <hr>
+      <div>v-model: {{ modelValue }}</div>
+    </div>
   </div>
 </template>
 <script>
@@ -19,7 +23,7 @@ import { action } from '@storybook/addon-actions';
 export default {
   data() {
     return {
-      
+      modelValue: "Foo"
     }
   },
   components: {
@@ -28,7 +32,6 @@ export default {
   props: [
     'name',
     'label',
-    'value',
     'required',
     'errorMessage',
     'instructionMessage',

@@ -1,16 +1,20 @@
 <template>
   <div style='height:100vh; display:flex; flex-flow:row nowrap; justify-content: center;align-items:center;'>
-    <TextInput
-      :name="name"
-      :label="label"
-      :value="value"
-      :required="required"
-      :errorMessage="errorMessage"
-      :theme="theme"
-      :instructionMessage="instructionMessage"
-      @blur="handleBlur"
-      @input="handlueInput"
-    ></TextInput>
+    <div>
+      <div>
+        <TextInput
+          :name="name"
+          :label="label"
+          :required="required"
+          :errorMessage="errorMessage"
+          :theme="theme"
+          :instructionMessage="instructionMessage"
+          v-model="modelValue"
+        ></TextInput>
+      </div>
+      <hr>
+      <div>v-model: {{ modelValue }}</div>
+    </div>
   </div>
 </template>
 <script>
@@ -20,7 +24,7 @@ import { action } from '@storybook/addon-actions';
 export default {
   data() {
     return {
-      
+      modelValue: "Bar"
     }
   },
   components: {
@@ -29,15 +33,13 @@ export default {
   props: [
     'name',
     'label',
-    'value',
     'required',
     'errorMessage',
     'theme',
     'instructionMessage',
   ],
   methods: {
-    handleBlur: action('blur'),
-    handlueInput: action('input')
+    
   }
 };
 </script>
