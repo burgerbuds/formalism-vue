@@ -43,9 +43,6 @@ storiesOf("TextInput", module).add("Basic", () => ({
     label: {
       default: text("label", "First Name")
     },
-    value: {
-      default: text("value", "Simple")
-    },
     required: {
       default: boolean("required", false)
     },
@@ -70,9 +67,6 @@ storiesOf("Textarea", module).add("Basic", () => ({
     },
     label: {
       default: text("label", "First Name")
-    },
-    value: {
-      default: text("value", "Simple")
     },
     required: {
       default: boolean("required", false)
@@ -99,7 +93,7 @@ storiesOf("Checkbox", module).add("Basic", () => ({
       default: text("label", "Are you a developer")
     },
     value: {
-      default: boolean("value", false)
+      default: text("value", '')
     },
     required: {
       default: boolean("required", false)
@@ -110,6 +104,12 @@ storiesOf("Checkbox", module).add("Basic", () => ({
     errorMessage: {
       default: text("errorMessage", "")
     },
+    trueValue: {
+      default: text("trueValue that returned in v-model", 'yes')
+    },
+    falseValue: {
+      default: text("falseValue that returned in v-model", 'no')
+    }
   },
   render(h) {
     return h(CheckboxBasicStory, {props: this.$props});
@@ -125,9 +125,6 @@ storiesOf("Select", module).add("Basic", () => ({
     label: {
       default: text("label", "Lunch idea?")
     },
-    value: {
-      default: text("value", '')
-    },
     required: {
       default: boolean("required", false)
     },
@@ -141,7 +138,8 @@ storiesOf("Select", module).add("Basic", () => ({
       default: object("options", [
         {
           label: 'Select...',
-          value: ''
+          value: '',
+          disabled: true
         },
         {
           label: 'Burger',

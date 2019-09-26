@@ -1,7 +1,7 @@
 <template>
     <div class="f-input" :class="[containerClass, `f-input--${theme}`]">
         <label class="f-input__inner">
-            <input class="f-input__field" type="text" v-model="internalValue" @blur="handleBlur" @input="handleInput" :name="name" :required="required"/>
+            <input class="f-input__field" type="text" v-model="internalValue" v-on="listeners" :name="name" :required="required"/>
             <span class="f-input__label"><span class="f-input__label-text">{{ label }}</span></span>
             <span class="f-input__indicator f-input__indicator--required" aria-hidden="true" v-if='required'>*</span>
         </label>
@@ -24,10 +24,23 @@
     ],
     data() {
         return {
-
+            
         }
     },
+    model: {
+      prop: 'value',
+      event: 'input'
+    },
     computed: {
+      listeners() {
+        const vm = this;
+        return {
+          ...this.$listeners,
+          input($event) {
+            vm.$emit('input', $event.target.value);
+          }
+        }
+      }
     }
   }
 </script>
