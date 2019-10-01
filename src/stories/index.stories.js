@@ -17,6 +17,10 @@ import TextInputBasicStory from "@/stories/componentStories/TextInputBasicStory.
 import TextareaBasicStory from "@/stories/componentStories/TextareaBasicStory.vue";
 import SelectBasicStory from "@/stories/componentStories/SelectBasicStory.vue";
 import CheckboxBasicStory from "@/stories/componentStories/CheckboxBasicStory.vue";
+import CheckboxesBasicStory from "@/stories/componentStories/CheckboxesBasicStory.vue";
+import FieldsetBasicStory from "@/stories/componentStories/FieldsetBasicStory.vue";
+import RadioBasicStory from "@/stories/componentStories/RadioBasicStory.vue";
+import FileInputBasicStory from "@/stories/componentStories/FileInputBasicStory.vue";
 
 
 // Homepage: 🏠
@@ -55,6 +59,41 @@ storiesOf("TextInput", module).add("Basic", () => ({
   },
   render(h) {
     return h(TextInputBasicStory, {props: this.$props});
+  },
+}));
+
+// FileInput ⌨️
+storiesOf("FileInput", module).add("Basic", () => ({
+  props: {
+    theme: {
+      default: optionsKnob("theme", {
+        'outlined':'outlined',
+        'underlined': 'underlined'
+      }, 'outlined', {
+        display: 'inline-radio'
+      })
+    },
+    name: {
+      default: text("name", "resume")
+    },
+    label: {
+      default: text("label", "Resume")
+    },
+    required: {
+      default: boolean("required", true)
+    },
+    instructionMessage: {
+      default: text("instructionMessage", "Upload your resume here")
+    },
+    errorMessage: {
+      default: text("errorMessage", "")
+    },
+    isMultiple: {
+      default: boolean("Is Multiple?", false)
+    }
+  },
+  render(h) {
+    return h(FileInputBasicStory, {props: this.$props});
   },
 }));
 
@@ -116,6 +155,73 @@ storiesOf("Checkbox", module).add("Basic", () => ({
   },
 }));
 
+// Checkboxes ⌨️
+storiesOf("Checkboxes", module).add("Basic", () => ({
+  props: {
+    name: {
+      default: text("name", "lunchChoice")
+    },
+    label: {
+      default: text("label", "So... What's for lunch?")
+    },
+    required: {
+      default: boolean("required", true)
+    },
+    instructionMessage: {
+      default: text("instructionMessage", "🤔 Difficult choice?!")
+    },
+    errorMessage: {
+      default: text("errorMessage", "")
+    },
+    options: {
+      default: object("Options", [
+        {
+          label: 'Burger',
+          value: 'burger'
+        },
+        {
+          label: 'Pho',
+          value: 'pho'
+        },
+        {
+          label: 'Succulent Chinese meal',
+          value: 'chinese-meal'
+        },
+      ])
+    },
+    isOneLine: {
+      default: boolean("Is One Line", true),
+    }
+  },
+  render(h) {
+    return h(CheckboxesBasicStory, {props: this.$props});
+  },
+}));
+
+// Checkboxes ⌨️
+storiesOf("Fieldset", module).add("Basic", () => ({
+  props: {
+    label: {
+      default: text("label", "So... What's for lunch?")
+    },
+    required: {
+      default: boolean("required", true)
+    },
+    instructionMessage: {
+      default: text("instructionMessage", "🤔 Difficult choice?!")
+    },
+    errorMessage: {
+      default: text("errorMessage", "")
+    },
+    isOneLine: {
+      default: boolean("Is One Line", true),
+    }
+  },
+  render(h) {
+    return h(FieldsetBasicStory, {props: this.$props});
+  },
+}));
+
 // Select ⌨️
 storiesOf("Select", module).add("Basic", () => ({
   props: {
@@ -158,5 +264,48 @@ storiesOf("Select", module).add("Basic", () => ({
   },
   render(h) {
     return h(SelectBasicStory, {props: this.$props});
+  },
+}));
+
+// Checkboxes ⌨️
+storiesOf("Radio", module).add("Basic", () => ({
+  props: {
+    name: {
+      default: text("name", "lunchChoice")
+    },
+    label: {
+      default: text("label", "So... What's for lunch?")
+    },
+    required: {
+      default: boolean("required", true)
+    },
+    instructionMessage: {
+      default: text("instructionMessage", "🤔 Difficult choice?!")
+    },
+    errorMessage: {
+      default: text("errorMessage", "")
+    },
+    options: {
+      default: object("Options", [
+        {
+          label: 'Burger',
+          value: 'burger'
+        },
+        {
+          label: 'Pho',
+          value: 'pho'
+        },
+        {
+          label: 'Succulent Chinese meal',
+          value: 'chinese-meal'
+        },
+      ])
+    },
+    isOneLine: {
+      default: boolean("Is One Line", true),
+    }
+  },
+  render(h) {
+    return h(RadioBasicStory, {props: this.$props});
   },
 }));

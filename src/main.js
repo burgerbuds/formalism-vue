@@ -2,6 +2,8 @@ import Checkbox from '@/components/Checkbox.vue';
 import Select from '@/components/Select.vue';
 import Textarea from '@/components/Textarea.vue';
 import TextInput from '@/components/TextInput.vue';
+import Checkboxes from '@/components/Checkboxes.vue';
+import Fieldset from '@/components/Fieldset.vue';
 
 const defaultOptions = {
   'componentPrefix': 'F-'
@@ -16,6 +18,8 @@ const FormalismVue = {
       ['Select', Select],
       ['Textarea', Textarea],
       ['TextInput', TextInput],
+      ['Checkboxes', Checkboxes],
+      ['Fieldset', Fieldset],
     ]
 
     componentsList.forEach(([name, comp]) => {
